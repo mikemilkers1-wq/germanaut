@@ -4524,15 +4524,16 @@ dynamicBackgroundKey = function(){
   return "early";
 };
 applyDynamicBackground = function(){
-  const key=dynamicBackgroundKey();
-  const url=backgroundImages[key]||backgroundImages.early;
-  const tint = state.uiMode==="dark" ? "linear-gradient(rgba(10,10,10,.62),rgba(10,10,10,.62))" : "linear-gradient(rgba(40,33,25,.50),rgba(40,33,25,.50))";
-  document.body.style.backgroundImage=`${tint},url("${url}")`;
-  document.body.style.backgroundSize="cover";
-  document.body.style.backgroundPosition="center";
-  document.body.style.backgroundAttachment="fixed";
-};
+  const url = "./decal1.png";
+  const tint = state.uiMode === "dark"
+    ? "linear-gradient(rgba(10,10,10,.62),rgba(10,10,10,.62))"
+    : "linear-gradient(rgba(40,33,25,.50),rgba(40,33,25,.50))";
 
+  document.body.style.backgroundImage = `${tint},url("${url}")`;
+  document.body.style.backgroundSize = "cover";
+  document.body.style.backgroundPosition = "center";
+  document.body.style.backgroundAttachment = "fixed";
+};
 /* ---------- monthly calendar ---------- */
 const monthNames = {
   en:["January","February","March","April","May","June","July","August","September","October","November","December"],
@@ -5578,7 +5579,7 @@ showAnnualSpecialEvent = function(y){
 /* ---------- deck based agenda ---------- */
 const deckCovers = {
   party:"https://images.squarespace-cdn.com/content/v1/5eaf6aa823f9f51c65e5f4e3/1605488473805-H0ZSEUH5XIZOVXDSXGC5/Green_8.jpg",
-  bundestag:"https://media.discordapp.net/attachments/1273973628073152602/1517599359225696408/vision.png?ex=6a36de0a&is=6a358c8a&hm=8c2347f7e339b1f29d64182cd52312b48b070d7eb121d9ada228495afbc0b24d&=&format=webp&quality=lossless",
+  bundestag:"./decal2.png",
   government:"https://www.feinschwarz.net/wp-content/uploads/2015/12/wir-sind-das-volk.jpg"
 };
 const deckNames = {
